@@ -36,7 +36,7 @@ VS Code のエクスプローラーで `README.md` を右クリック → **Open
 このプロジェクトは、セキュリティニュースの URL を入力すると
 自動的に日本語の HTML 記事を生成するツールです。
 
-Node.js で動作し、GitHub Copilot Skills を使ってインタラクティブに
+GitHub Copilot Skills を使ってインタラクティブに
 URL を受け取ります。
 
 この内容で README.md を日本語で書いてください。
