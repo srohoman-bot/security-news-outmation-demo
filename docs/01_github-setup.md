@@ -145,6 +145,23 @@ ssh-add ~/.ssh/id_ed25519
 ssh -T git@github.com
 ```
 
+<details>
+<summary>▼ PowerShell の場合</summary>
+
+```powershell
+# SSH エージェントサービスを起動して鍵を登録
+Start-Service ssh-agent
+ssh-add $env:USERPROFILE\.ssh\id_ed25519
+
+# 再テスト
+ssh -T git@github.com
+```
+
+> ⚠️ `Start-Service` が「アクセスが拒否されました」と出る場合は、  
+> PowerShell を**管理者として実行**してから `Set-Service ssh-agent -StartupType Automatic` を一度だけ実行してください。
+
+</details>
+
 ### 複数の SSH キーを使い分けたい場合
 
 `~/.ssh/config` ファイルを作成：

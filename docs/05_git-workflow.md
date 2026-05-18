@@ -109,6 +109,33 @@ Thumbs.db
 EOF
 ```
 
+<details>
+<summary>▼ PowerShell の場合（ヒアドキュメントは使えないため）</summary>
+
+```powershell
+@"
+# Node.js
+node_modules/
+npm-debug.log*
+
+# 生成された記事（テスト用）
+output/*.html
+
+# 環境変数・秘密情報
+.env
+.env.local
+*.key
+*.pem
+
+# OS・エディタ
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+"@ | Set-Content .gitignore
+```
+
+</details>
+
 ---
 
 ## 5-5：git commit — ステージをコミットする
