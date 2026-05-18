@@ -1,14 +1,111 @@
 > 📅 **Day 3 — Step 2/2**
 
-# Step 6（発展）：テンプレートで記事をカスタマイズする
+# Step 6（発展）：YJK ブランドスタイルで記事をカスタマイズする
 
 ---
 
 ## 🎯 このステップのゴール
 
-- 記事の構成テンプレートを保存・切り替えできる
-- CSS スタイルテンプレートを読み込んで記事のデザインを変更できる
-- Copilot Skill からテンプレートを指定して実行できる
+- 生成 HTML に YJK のブランド CSS が適用されていることを確認できる
+- Copilot Chat で YJK スタイルをカスタマイズできる
+
+---
+
+## 6-1：YJK ブランドスタイルとは
+
+このシステムの HTML 記事には **YJK 社の記事 CSS** が埋め込まれています。  
+`/YJK-Project/Blog-autmotion/scripts/article.css` をベースにしており、以下が特徴です：
+
+| 要素 | スタイル |
+|------|---------|
+| フォント | Hiragino Kaku Gothic ProN / Noto Sans JP |
+| ベースカラー | `#0078d4`（Microsoft ブルー） |
+| H1 | 下線：`3px solid #0078d4` |
+| H2 | 左ボーダー：`5px solid #0078d4` |
+| H3 | 文字色：`#0078d4` |
+| テーブルヘッダー | 背景 `#0078d4`、白文字 |
+| 引用 | 背景 `#f0f7ff`、左ボーダー `#0078d4` |
+| 緊急度バッジ | 🔴 `#d13438` / 🟠 `#ff8c00` / 🟡 `#ffb900` / 🟢 `#107c10` |
+
+---
+
+## 6-2：スタイルを確認する
+
+`output/` に生成された HTML ファイルを VS Code の Simple Browser で開いて確認してください。
+
+- `Ctrl+Shift+P` → `Simple Browser: Show` → ファイルパスを入力
+
+YJK ブルー（`#0078d4`）の見出し・テーブルが表示されていれば正常です。
+
+---
+
+## 6-3：YJK スタイルを Copilot で再現するプロンプト
+
+**新しい環境やエージェントを作るとき**は、以下のプロンプトで YJK スタイルを再現できます。
+
+Copilot Chat に貼り付けて送信：
+
+```
+セキュリティ記事用の HTML を生成するとき、以下の YJK ブランド CSS を
+<style> タグにインラインで埋め込んで。
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  font-size: 16px; line-height: 1.8; color: #333;
+  max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; background: #fff;
+}
+h1 { font-size: 1.8rem; border-bottom: 3px solid #0078d4; padding-bottom: 0.4em; }
+h2 { font-size: 1.4rem; border-left: 5px solid #0078d4; padding-left: 0.6em; margin-top: 2em; }
+h3 { font-size: 1.15rem; color: #0078d4; }
+table { width: 100%; border-collapse: collapse; }
+th { background: #0078d4; color: #fff; padding: 0.6em 1em; text-align: left; }
+td { padding: 0.6em 1em; border: 1px solid #ddd; }
+tr:nth-child(even) td { background: #f5f9ff; }
+blockquote { background: #f0f7ff; border-left: 4px solid #0078d4; padding: 0.8em 1.2em; }
+.badge-critical { background: #d13438; color: #fff; padding: 0.2em 0.7em; border-radius: 3px; }
+.badge-high     { background: #ff8c00; color: #fff; padding: 0.2em 0.7em; border-radius: 3px; }
+.badge-medium   { background: #ffb900; color: #fff; padding: 0.2em 0.7em; border-radius: 3px; }
+.badge-low      { background: #107c10; color: #fff; padding: 0.2em 0.7em; border-radius: 3px; }
+```
+
+---
+
+## 6-4：スタイルをカスタマイズする
+
+アクセントカラーや背景を変えたいときは Copilot Chat に依頼：
+
+```
+security-writer.agent.md の YJK CSS を変更して。
+アクセントカラーを #0078d4 から #107c10（グリーン）に変えて。
+```
+
+または会社のブランドカラーに合わせて：
+
+```
+security-writer.agent.md の CSS のアクセントカラーを
+#（16進数カラーコード） に変更して。
+見出し・テーブルヘッダー・左ボーダーすべて統一して。
+```
+
+---
+
+## ✅ チェックリスト
+
+- [ ] 生成 HTML に YJK ブルー（`#0078d4`）が反映されている
+- [ ] 緊急度バッジの色が正しく表示されている
+- [ ] フォントが Noto Sans JP で表示されている
+
+---
+
+## 🎉 Day 3・全課程お疲れさまでした！
+
+> **3 日間で学んだこと**
+> - SSH パスワードレス接続と GitHub リポジトリ管理
+> - Copilot Chat で README・仕様書を生成
+> - `/create-skill` と `/create-agent` で AI ワークフローを構築
+> - Skills & Agents だけでセキュリティ記事を自動生成
+> - YJK ブランド CSS で記事のデザインを統一
+> - git add / commit / push で GitHub に公開
 
 ---
 

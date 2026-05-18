@@ -77,13 +77,42 @@ user-invocable: true
 HTML は以下の構成で自己完結した 1 ファイルにすること（外部 CSS・JS 不要）：
 
 ```
-- <head>: 文字コード UTF-8、日本語フォント（Noto Sans JP を Google Fonts から）、インライン CSS
+- <head>: 文字コード UTF-8、以下の YJK ブランド CSS をインラインで埋め込む
 - タイトルバー: 記事タイトル・緊急度バッジ・生成日時
 - 概要: 3〜5 文
 - 重要ポイント: 箇条書き
 - 影響を受けるシステム: バージョン情報
 - 推奨アクション: 優先度付き番号リスト
 - 参考リンク: 元記事 URL
+```
+
+#### YJK ブランド CSS（`<style>` タグで必ず埋め込む）
+
+```css
+body {
+  font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  font-size: 16px; line-height: 1.8; color: #333;
+  max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; background: #fff;
+}
+h1 { font-size: 1.8rem; border-bottom: 3px solid #0078d4; padding-bottom: 0.4em; margin-top: 1.5em; }
+h2 { font-size: 1.4rem; border-left: 5px solid #0078d4; padding-left: 0.6em; margin-top: 2em; }
+h3 { font-size: 1.15rem; color: #0078d4; margin-top: 1.5em; }
+img { max-width: 100%; height: auto; display: block; margin: 1.5em auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.95rem; }
+th { background: #0078d4; color: #fff; padding: 0.6em 1em; text-align: left; }
+td { padding: 0.6em 1em; border: 1px solid #ddd; }
+tr:nth-child(even) td { background: #f5f9ff; }
+blockquote { background: #f0f7ff; border-left: 4px solid #0078d4; margin: 1.5em 0; padding: 0.8em 1.2em; border-radius: 0 4px 4px 0; color: #444; }
+code { background: #f4f4f4; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+pre code { display: block; padding: 1em; overflow-x: auto; line-height: 1.5; }
+ul, ol { padding-left: 1.8em; margin: 0.8em 0; }
+li { margin: 0.3em 0; }
+hr { border: none; border-top: 1px solid #e0e0e0; margin: 2em 0; }
+.badge { display: inline-block; padding: 0.2em 0.7em; border-radius: 3px; font-size: 0.85rem; font-weight: bold; }
+.badge-critical { background: #d13438; color: #fff; }
+.badge-high     { background: #ff8c00; color: #fff; }
+.badge-medium   { background: #ffb900; color: #fff; }
+.badge-low      { background: #107c10; color: #fff; }
 ```
 
 ファイル保存後、パス（例: `output/cisa-gov-20260518.html`）を `Security News Generator` に返す。
