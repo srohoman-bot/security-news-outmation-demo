@@ -6,7 +6,6 @@
 
 ## 🎯 このステップのゴール
 
-- Node.js スクリプト・テンプレートを Copilot Chat で生成できる
 - `/create-skill` と `/create-agent` でこのプロジェクトの Skill・Agent を作れる
 
 ---
@@ -21,31 +20,6 @@
     ├── security-writer.agent.md             ← 記事執筆
     └── security-reviewer.agent.md           ← 品質レビュー
 ```
-
----
-
-## 3-0：スクリプト・環境を Copilot Chat で作る
-
-Skill が呼び出す Node.js スクリプトとテンプレートを先に作ります。  
-Copilot Chat（エージェントモード）に以下を 1 つずつ貼り付けて送信するだけです。
-
-### ① プロジェクト環境を作る
-
-```
-セキュリティニュースの URL から日本語 HTML 記事を生成する
-Node.js プロジェクトの package.json と
-scripts/generate-article.js を作って。
-```
-
-### ② HTML テンプレートを作る
-
-```
-セキュリティ記事用の HTML テンプレートを
-templates/article-template.html に作って。
-日本語対応で読みやすいデザインにして。
-```
-
-> 💡 Copilot が生成したら「このスクリプトは何をしているか日本語で説明して」と聞いて確認しましょう。
 
 ---
 
@@ -115,9 +89,6 @@ Copilot Chat で /news-article-generator と入力
 
 ## ✅ チェックリスト
 
-- [ ] `package.json` が生成された
-- [ ] `scripts/generate-article.js` が生成された
-- [ ] `templates/article-template.html` が生成された
 - [ ] SKILL.md が `.github/skills/news-article-generator/` に生成された
 - [ ] 3 つの `.agent.md` が `.github/agents/` に生成された
 

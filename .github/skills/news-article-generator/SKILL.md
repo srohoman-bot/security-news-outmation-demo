@@ -31,10 +31,9 @@ argument-hint: "記事にしたいセキュリティニュースの URL を貼�
 
 ```
 [ ] 1. 情報調査   — Security Researcher
-[ ] 2. 記事執筆   — Security Writer
-[ ] 3. HTML生成   — generate-article.js
-[ ] 4. 品質レビュー — Security Reviewer
-[ ] 5. 完了報告   — ユーザーに提示（Git はユーザーが実施）
+[ ] 2. 記事執筆   — Security Writer（HTML を output/ に直接保存）
+[ ] 3. 品質レビュー — Security Reviewer
+[ ] 4. 完了報告   — ユーザーに提示（Git はユーザーが実施）
 ```
 
 ---
@@ -63,38 +62,22 @@ argument-hint: "記事にしたいセキュリティニュースの URL を貼�
 - `technical` → エンジニア向け：技術詳細・TTP・IoC ヒント込み
 - `executive` → 経営層向け：ビジネスリスク + 承認が必要なアクションのみ
 
-執筆完了後：todo の「2. 記事執筆」を完了にして次へ進む。
+執筆・HTML保存完了後：todo の「2. 記事執筆」を完了にして次へ進む。
 
 ---
 
-## Step 4: HTML ファイルを生成
-
-以下のコマンドを実行してください：
-
-```bash
-node scripts/generate-article.js \
-  --url "<Step1のURL>" \
-  --template <standard|technical|executive> \
-  --style default \
-  --output <ドメイン名-YYYYMMDD>
-```
-
-生成完了後：todo の「3. HTML生成」を完了にして次へ進む。
-
----
-
-## Step 5: `@Security Reviewer` に品質レビューを委任
+## Step 4: `@Security Reviewer` に品質レビューを委任
 
 `Security Reviewer` エージェントを呼び出し、生成された記事を評価させてください。
 
 - 判定が **✅ 公開可** または **⚠️ 軽微な修正推奨** → Step 6 へ
 - 判定が **❌ 要修正** → 修正内容をユーザーに提示し、`@Security Writer` に差し戻して再執筆
 
-レビュー完了後：todo の「4. 品質レビュー」を完了にして次へ進む。
+レビュー完了後：todo の「3. 品質レビュー」を完了にして次へ進む。
 
 ---
 
-## Step 6: 完了報告（Git 操作はユーザーが行う）
+## Step 5: 完了報告（Git 操作はユーザーが行う）
 
 以下の形式でユーザーに報告して処理を終了してください。  
 **エージェントは Git を実行しない。ユーザーが記事を確認してから実施する。**

@@ -1,5 +1,5 @@
 ---
-description: "security-researcherの調査結果を受け取り、対象読者に合わせた日本語セキュリティ記事を執筆する専門エージェント。USE FOR: セキュリティ記事の本文を書きたい、調査結果を記事化したい。security-news-generator から自動的に呼び出される。DO NOT USE FOR: 情報の調査、HTML生成、Gitコミット。"
+description: "security-researcherの調査結果を受け取り、対象読者に合わせた日本語セキュリティ記事をHTMLファイルとして直接生成する専門エージェント。USE FOR: セキュリティ記事の本文を書きたい、調査結果を記事化したい。security-news-generator から自動的に呼び出される。DO NOT USE FOR: 情報の調査、Gitコミット。"
 name: "Security Writer"
 tools: [read, edit]
 user-invocable: true
@@ -73,25 +73,17 @@ user-invocable: true
 
 ### 3. 出力
 
-以下の形式で `Security News Generator` に返す：
+`edit` ツールを使って `output/<ドメイン名-YYYYMMDD>.html` にファイルを保存する。  
+HTML は以下の構成で自己完結した 1 ファイルにすること（外部 CSS・JS 不要）：
 
 ```
-【概要】
-...（3〜5 文）
-
-【重要ポイント】
-- ...
-- ...
-- ...
-
-【影響を受けるシステム】
-- 影響あり: ...
-- 修正済み: ...
-- 確認方法: ...
-
-【推奨アクション】
-1. （高・即時）...
-2. （高・即時）...
-3. （中・今週中）...
-4. （低・確認）...
+- <head>: 文字コード UTF-8、日本語フォント（Noto Sans JP を Google Fonts から）、インライン CSS
+- タイトルバー: 記事タイトル・緊急度バッジ・生成日時
+- 概要: 3〜5 文
+- 重要ポイント: 箇条書き
+- 影響を受けるシステム: バージョン情報
+- 推奨アクション: 優先度付き番号リスト
+- 参考リンク: 元記事 URL
 ```
+
+ファイル保存後、パス（例: `output/cisa-gov-20260518.html`）を `Security News Generator` に返す。
