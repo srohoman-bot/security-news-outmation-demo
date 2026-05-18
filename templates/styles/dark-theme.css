@@ -1,0 +1,182 @@
+/* ==============================================
+   セキュリティニュース記事 — ダークテーマ
+   templates/styles/dark-theme.css
+   ============================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+  background-color: #0f0f1a;
+  color: #e0e0e0;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.article-header {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  border-left: 5px solid #4ecdc4;
+}
+
+.article-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  line-height: 1.4;
+  margin: 0.75rem 0;
+}
+
+.article-meta {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: #8a9bb0;
+  margin-top: 0.5rem;
+}
+
+.article-meta a {
+  color: #4ecdc4;
+  text-decoration: none;
+}
+
+.article-meta a:hover {
+  text-decoration: underline;
+}
+
+.severity-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.severity-critical { background: #3d1515; color: #fc8181; border: 1px solid #742a2a; }
+.severity-high     { background: #2d1f0a; color: #f6ad55; border: 1px solid #7b4b1a; }
+.severity-medium   { background: #2d2a0a; color: #f6e05e; border: 1px solid #6b6014; }
+.severity-low      { background: #0a2d1a; color: #68d391; border: 1px solid #1a6b3a; }
+
+.section {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 1.75rem 2.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  border-bottom: 2px solid #2d2d4e;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.summary-section {
+  border-left: 4px solid #4ecdc4;
+}
+
+.summary-text {
+  font-size: 1rem;
+  color: #c0c0d0;
+  line-height: 1.8;
+}
+
+.key-points {
+  list-style: none;
+  padding: 0;
+}
+
+.key-points li {
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  position: relative;
+  border-bottom: 1px dashed #2d2d4e;
+  color: #c0c0d0;
+}
+
+.key-points li:last-child {
+  border-bottom: none;
+}
+
+.key-points li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #4ecdc4;
+  font-size: 0.7rem;
+  top: 0.65rem;
+}
+
+.affected-systems {
+  background: #0f0f1a;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #a0b0c0;
+  border: 1px solid #2d2d4e;
+}
+
+.action-section {
+  border-left: 4px solid #68d391;
+}
+
+.action-list {
+  padding-left: 1.25rem;
+}
+
+.action-list li {
+  padding: 0.4rem 0;
+  color: #c0c0d0;
+}
+
+.reference-list {
+  list-style: none;
+  padding: 0;
+}
+
+.reference-list li {
+  padding: 0.4rem 0;
+}
+
+.reference-list a {
+  color: #4ecdc4;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.reference-list a:hover {
+  text-decoration: underline;
+}
+
+.article-footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: #5a6a7a;
+  border-top: 1px solid #2d2d4e;
+  margin-top: 2rem;
+}
+
+.article-footer a {
+  color: #5a6a7a;
+}

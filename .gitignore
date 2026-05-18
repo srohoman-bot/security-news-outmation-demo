@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 生成された記事（個人のテスト出力はコミットしない）
+output/*.html
+
+# 環境変数・秘密情報（絶対にコミットしないこと）
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+.vscode/settings.json
+*.swp
+*.swo

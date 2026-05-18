@@ -1,0 +1,25 @@
+{
+  "name": "security-news-outmation-demo",
+  "version": "1.0.0",
+  "description": "セキュリティニュース自動記事生成ツール × GitHub Copilot 学習キット",
+  "type": "module",
+  "main": "scripts/generate-article.js",
+  "scripts": {
+    "start": "node scripts/generate-article.js",
+    "generate": "node scripts/generate-article.js"
+  },
+  "keywords": [
+    "security",
+    "github-copilot",
+    "automation",
+    "learning-kit"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
